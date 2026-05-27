@@ -1,0 +1,15 @@
+{
+  "storage_dir": "~/.cache/gls",
+  "indexes": {
+    "docs": [
+      "~/Documents",
+      "~/notes"
+    ],
+    "code": [
+      "~/projects",
+      "~/work/repos"
+    ]
+  },
+  "fuzzy_search": false,
+  "max_distance": 2
+}
