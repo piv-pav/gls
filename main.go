@@ -260,11 +260,9 @@ func handleSearch(cfg *config.Config, indexName string, argOffset int) {
 
 	for i, result := range results {
 		fmt.Printf("%s%d. %s%s\n", colorBlue, i+1, result.Document.Path, colorReset)
-		fmt.Printf("   Score: %.2f | Matches: %d/%d\n", result.Score, result.MatchCount, result.QueryTerms)
-		
-		// Show snippet
-		snippet := getSnippet(result.Document.Content, 150)
+		lineNum, snippet := getSnippetWithLine(result.Document.Content, query, 300)
 		snippet = highlightMatches(snippet, query)
+		fmt.Printf("   Score: %.2f | Matches: %d/%d | Line: %d\n", result.Score, result.MatchCount, result.QueryTerms, lineNum)
 		fmt.Printf("   %s\n\n", snippet)
 	}
 }
@@ -416,6 +414,53 @@ func printUsage() {
 	fmt.Printf("  gls work \"function\" --fuzzy        # Fuzzy search in 'work'\n")
 	fmt.Printf("  gls delete work                    # Delete 'work' index\n")
 	fmt.Printf("  gls list                           # List all indexes\n")
+}
+
+// getSnippetWithLine finds the first query term match, returns its 1-based line
+// number and a snippet extracted from that line (trimmed to maxLen).
+func getSnippetWithLine(content, query string, maxLen int) (int, string) {
+	contentLower := strings.ToLower(content)
+	words := strings.Fields(strings.ToLower(query))
+
+	firstMatch := -1
+	for _, word := range words {
+		if idx := strings.Index(contentLower, word); idx >= 0 {
+			if firstMatch < 0 || idx < firstMatch {
+				firstMatch = idx
+			}
+		}
+	}
+
+	if firstMatch < 0 {
+		// No match found — fall back to start of doc
+		return 1, getSnippet(content, maxLen)
+	}
+
+	lineNum := strings.Count(content[:firstMatch], "\n") + 1
+
+	// Find start and end of the matched line
+	lineStart := strings.LastIndex(content[:firstMatch], "\n") + 1
+	lineEnd := strings.Index(content[firstMatch:], "\n")
+	var line string
+	if lineEnd < 0 {
+		line = content[lineStart:]
+	} else {
+		line = content[lineStart : firstMatch+lineEnd]
+	}
+
+	// Trim leading/trailing whitespace, preserve internal spacing
+	line = strings.TrimSpace(line)
+	if len(line) > maxLen {
+		line = line[:maxLen] + "..."
+	}
+
+	return lineNum, line
+}
+
+// findLineNumber is kept for potential future use.
+func findLineNumber(content, query string) int {
+	lineNum, _ := getSnippetWithLine(content, query, 0)
+	return lineNum
 }
 
 func getSnippet(content string, maxLen int) string {

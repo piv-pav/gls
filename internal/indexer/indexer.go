@@ -167,6 +167,7 @@ func (i *Indexer) shouldIndex(path string) bool {
 		".html": true,
 		".css":  true,
 		".sql":  true,
+		".jsonl": true,
 		"":      true, // Files without extension (like README)
 	}
 

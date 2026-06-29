@@ -40,3 +40,6 @@ Thumbs.db
 
 # Config files (optional, keep template)
 config.json
+
+# Task files
+TASKS.md

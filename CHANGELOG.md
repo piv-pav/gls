@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.2.4] - 2026-06-29
+
+### Changed
+- Search results now always show line number of first match and snippet from matching line
+- Previously snippet was taken from document start; now extracted from the matched line
+- Output format: `Score: X | Matches: Y/Z | Line: N` followed by matching line content
+
 ## [0.2.3] - 2026-05-27
 
 ### Changed
