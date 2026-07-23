@@ -14,9 +14,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [0.2.3] - 2026-05-27
 
 ### Changed
-- **Repository migration**: Moved to Codeberg (codeberg.org/pivpav/gls)
-- **Module path**: Updated to `codeberg.org/pivpav/gls`
-- **Install command**: `go install codeberg.org/pivpav/gls@latest`
+- **Repository migration**: Moved to Codeberg (github.com/piv-pav/gls)
+- **Module path**: Updated to `github.com/piv-pav/gls`
+- **Install command**: `go install github.com/piv-pav/gls@latest`
 - Updated all import paths in source code
 - Updated README and CHANGELOG URLs
 
@@ -27,9 +27,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Version information embedded via ldflags during build
 
 ### Changed
-- **Simplified install**: Moved main.go to repo root for cleaner `go install codeberg.org/pivpav/gls@latest`
+- **Simplified install**: Moved main.go to repo root for cleaner `go install github.com/piv-pav/gls@latest`
 - **Repo renamed**: `go-local-search` → `gls` on git server
-- **Module path**: Updated to `codeberg.org/pivpav/gls`
+- **Module path**: Updated to `github.com/piv-pav/gls`
 
 ## [0.1.0] - 2026-05-25
 
@@ -72,4 +72,4 @@ Initial upstream release by BaseMax/go-local-search with:
 ---
 
 **Fork source**: https://github.com/BaseMax/go-local-search  
-**Fork repository**: https://codeberg.org/pivpav/gls.git
+**Fork repository**: https://github.com/piv-pav/gls.git

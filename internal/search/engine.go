@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	"codeberg.org/pivpav/gls/internal/index"
-	"codeberg.org/pivpav/gls/internal/indexer"
-	"codeberg.org/pivpav/gls/internal/storage"
-	"codeberg.org/pivpav/gls/internal/tokenizer"
+	"github.com/piv-pav/gls/internal/index"
+	"github.com/piv-pav/gls/internal/indexer"
+	"github.com/piv-pav/gls/internal/storage"
+	"github.com/piv-pav/gls/internal/tokenizer"
 )
 
 // Engine is the main search engine

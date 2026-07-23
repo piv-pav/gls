@@ -5,7 +5,7 @@ import (
 	"strings"
 	"unicode"
 
-	"codeberg.org/pivpav/gls/internal/util"
+	"github.com/piv-pav/gls/internal/util"
 )
 
 // Token represents a processed token with its position

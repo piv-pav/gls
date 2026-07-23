@@ -34,7 +34,7 @@ A fast, lightweight local full-text search engine for indexing and searching thr
 ### Build from Source
 
 ```bash
-git clone https://codeberg.org/pivpav/gls.git
+git clone https://github.com/piv-pav/gls.git
 cd gls
 make build  # Creates bin/gls
 ```
@@ -42,7 +42,7 @@ make build  # Creates bin/gls
 ### Install Globally
 
 ```bash
-go install codeberg.org/pivpav/gls@latest
+go install github.com/piv-pav/gls@latest
 ```
 
 ## Usage

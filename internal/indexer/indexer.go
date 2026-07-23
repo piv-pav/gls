@@ -8,8 +8,8 @@ import (
 	"strings"
 	"sync"
 
-	"codeberg.org/pivpav/gls/internal/index"
-	"codeberg.org/pivpav/gls/internal/tokenizer"
+	"github.com/piv-pav/gls/internal/index"
+	"github.com/piv-pav/gls/internal/tokenizer"
 )
 
 // Indexer handles file indexing operations

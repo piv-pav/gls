@@ -7,8 +7,8 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"codeberg.org/pivpav/gls/internal/search"
-	"codeberg.org/pivpav/gls/pkg/config"
+	"github.com/piv-pav/gls/internal/search"
+	"github.com/piv-pav/gls/pkg/config"
 )
 
 const (

@@ -1,4 +1,4 @@
-module codeberg.org/pivpav/gls
+module github.com/piv-pav/gls
 
 go 1.24.11
 

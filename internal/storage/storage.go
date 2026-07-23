@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"codeberg.org/pivpav/gls/internal/index"
+	"github.com/piv-pav/gls/internal/index"
 	bolt "go.etcd.io/bbolt"
 )
 

@@ -7,7 +7,7 @@ import (
 	"sort"
 	"sync"
 
-	"codeberg.org/pivpav/gls/internal/util"
+	"github.com/piv-pav/gls/internal/util"
 )
 
 // Document represents an indexed document
